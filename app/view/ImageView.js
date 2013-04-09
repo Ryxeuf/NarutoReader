@@ -11,5 +11,20 @@ Ext.define('NarutoReader.view.ImageView', {
         // width: '100%'
         // scrollable: 'vertical', 
         // height: 'auto'
+
+        listeners: [
+            {
+                element: 'element',
+                delegate: 'pinch',
+                fn: : function(e , node, options, eOpts) {
+                    var transformDetails = {
+                        scale: 2,
+                        angle: 0
+                    };
+                    var ScaleCmp =  Ext.getCmp('logger');
+                    ScaleCmp.element.setStyle('-webkit-transform', 'scaleX(' + e.scale + ') scaleY(' + e.scale + ')');
+                }
+            }
+        ]
     }
 });
